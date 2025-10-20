@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jayden Tan – Robotics & Embedded Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --bg:#0a0a0b;
+      --fg:#f2f2f2;
+      --accent:#00e5ff;
+      --muted:#8a8f98;
+      --card:#111217;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:"Inter",system-ui,sans-serif;color:var(--fg);}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);line-height:1.5;}
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:var(--accent);}
+    h1,h2,h3{line-height:1.2;margin-bottom:.5em;}
+    section{padding:clamp(3rem,8vw,6rem) 1.5rem;max-width:1100px;margin:auto;}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:var(--bg);padding:.7rem 1.4rem;border-radius:4px;font-weight:600;margin-top:1rem;}
+    .btn:hover{filter:brightness(1.15);}
+    header{
+      position:fixed;top:0;left:0;right:0;
+      background:#000000aa;backdrop-filter:blur(8px);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:.75rem 1.5rem;z-index:10;
+    }
+    nav{display:flex;gap:1.2rem;font-size:.9rem;}
+    nav a{color:var(--fg);}
+    nav a:hover{color:var(--accent);}
+    #hero{display:flex;flex-direction:column;justify-content:center;min-height:100vh;text-align:center;}
+    #hero h1{font-size:clamp(2rem,5vw,3.2rem);}
+    #hero p{font-size:1.1rem;color:var(--muted);}
+    .micro{display:flex;justify-content:center;gap:2rem;margin-top:2rem;flex-wrap:wrap;font-size:.85rem;}
+    .micro>div{text-align:center;max-width:140px;}
+    .micro svg{width:32px;height:32px;margin-bottom:.3rem;fill:var(--accent);}
+    #about{display:grid;gap:2rem;grid-template-columns:1fr 1fr;align-items:center;}
+    #about img{border-radius:8px;}
+    .facts{display:grid;gap:.5rem;margin-top:1rem;font-size:.9rem;color:var(--muted);}
+    .grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+    .card{background:var(--card);border-radius:8px;padding:1.2rem;display:flex;flex-direction:column;}
+    .card img{border-radius:4px;margin-bottom:.8rem;}
+    .tags{display:flex;gap:.4rem;flex-wrap:wrap;margin:.6rem 0;font-size:.7rem;}
+    .tags span{background:#ffffff11;padding:.2rem .5rem;border-radius:3px;}
+    .skills{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+    .skill{margin-bottom:.7rem;}
+    .bar{height:6px;background:#ffffff15;border-radius:3px;overflow:hidden;margin-top:.3rem;}
+    .bar div{height:100%;background:var(--accent);}
+    #media video,#media img{width:100%;max-width:500px;border-radius:6px;margin-bottom:1rem;}
+    form{display:grid;gap:1rem;max-width:500px;}
+    input,textarea,select{width:100%;padding:.7rem;background:#1a1a1f;border:1px solid #333;border-radius:4px;}
+    footer{text-align:center;padding:2rem 1rem;font-size:.8rem;color:var(--muted);}
+    @media(max-width:800px){
+      #about{grid-template-columns:1fr;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <strong>JT</strong>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#media">Demos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <h1>Jayden Tan — Robotics & Embedded Systems Student</h1>
+  <p>Building real-world assistive tech and robotics using Raspberry Pi, microcontrollers, and clever software.</p>
+  <div>
+    <a class="btn" href="#projects">View Projects</a>
+    <a class="btn" href="assets/JaydenTan_CV.pdf" download>Download CV</a>
+  </div>
+  <div class="micro">
+    <div>
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Rapid prototypes: 1-week playable Python games & competition-ready robots
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+      Embedded systems: Pi Zero 2 W, Pico, Maker pHAT experience
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V18h14v-1.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V18h6v-1.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      Collaboration: Team lead, event emcee, and project coordinator
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div>
+    <h2>About</h2>
+    <p><strong>I’m a 15-year-old student building assistive tech and competition robots. I love turning ideas into working prototypes.</strong></p>
+    <p>I’m Jayden — an aspiring engineer who blends software with hardware. I build embedded projects (Raspberry Pi, Pico), compete in robotics, and design user-focused prototypes like E-Vision — smart glasses that read text and describe scenes for visually impaired users. I enjoy quick iteration, clear documentation, and teaching teammates. Outside projects I play volleyball (setter) and organize workshops.</p>
+    <div class="facts">
+      <div>Age: 15</div>
+      <div>Role: Robotics competitor / Project lead / Prefect</div>
+      <div>Languages: Python, CircuitPython, C/C++ (Arduino)</div>
+      <div>Tools: Raspberry Pi, Pybricks, Maker pHAT, Tesseract OCR, OpenAI APIs</div>
+    </div>
+  </div>
+  <div><img src="assets/jayden.jpg" alt="Jayden"></div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="assets/ev-thumb.jpg" alt="E-Vision">
+      <h3>E-Vision</h3>
+      <p>Hands-free glasses that capture images, read text out loud, and describe scenes using a Raspberry Pi Zero 2 and AI.</p>
+      <div class="tags"><span>#assistive-tech</span><span>#raspberry-pi</span><span>#computer-vision</span></div>
+      <div>
+        <a class="btn" href="#case-ev">View Case Study</a>
+        <a class="btn" href="https://github.com/jaydenteo/e-vision" target="_blank">Source</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/sort-thumb.jpg" alt="Color-Sorting Robot">
+      <h3>Color-Sorting Robot</h3>
+      <p>A match-and-sort robot that detects color pairs and navigates to place objects in the correct bins.</p>
+      <div class="tags"><span>#robotics</span><span>#pybricks</span><span>#competition</span></div>
+      <div>
+        <a class="btn" href="https://github.com/jaydenteo/color-sort" target="_blank">Code</a>
+        <a class="btn" href="https://youtube.com/watch?v=xxxxxx" target="_blank">Video Demo</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/trans-thumb.jpg" alt="Word Translator">
+      <h3>E-Vision Word Translator</h3>
+      <p>OCR → translate → TTS for quick on-device word translation (English-only prototype).</p>
+      <div class="tags"><span>#translation</span><span>#ocr</span><span>#tts</span></div>
+      <div>
+        <a class="btn" href="https://github.com/jaydenteo/word-translate" target="_blank">Repo</a>
+        <a class="btn" href="https://youtube.com/watch?v=yyyyyy" target="_blank">Demo</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/budget-thumb.jpg" alt="Budget Tracker">
+      <h3>Budget Tracker</h3>
+      <p>A low-cost physical budget tracker using joystick & LCD: select meal and press button to record cost.</p>
+      <div class="tags"><span>#embedded</span><span>#ui</span><span>#raspberry-pi-pico</span></div>
+      <div>
+        <a class="btn" href="#pico-detail">Details</a>
+        <a class="btn" href="https://github.com/jaydenteo/pico-budget" target="_blank">Code</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="case-ev">
+  <h2>Featured Case Study</h2>
+  <h3>E-Vision — Smart Glasses for the Visually Impaired</h3>
+  <p><strong>On-device capture + AI description to give blind/low-vision users on-demand reading and scene understanding.</strong></p>
+
+  <h4>Problem</h4>
+  <p>Visually impaired people struggle to read product labels and navigate unfamiliar spaces. Existing solutions are often phone-based and not always hands-free.</p>
+
+  <h4>Solution</h4>
+  <p>A clip-on glasses module (Pi Zero 2 W) with a camera at the bridge, three tactile buttons, and Bluetooth audio that:</p>
+  <ul>
+    <li>Listens for user voice or button press</li>
+    <li>Captures an image on demand</li>
+    <li>Extracts text via OCR and reads it aloud</li>
+    <li>Sends scene images to a vision-capable GPT model for descriptive output</li>
+  </ul>
+
+  <h4>Technical Architecture</h4>
+  <ul>
+    <li>Wake-word detection: Porcupine (offline)</li>
+    <li>Speech-to-text: Whisper/whisper.cpp (on-device) or online API fallback</li>
+    <li>Intent parsing: GPT-powered JSON intent recognition</li>
+    <li>Vision/TTS: pytesseract for OCR; OpenAI Vision or custom model for scene descriptions; pyttsx3/espeak-ng for local TTS or cloud TTS for higher quality</li>
+    <li>Hardware: Pi Zero 2 W, Camera Module 3, Maker pHAT buttons, UPS Power HAT, Bluetooth earbud</li>
+  </ul>
+
+  <h4>Timeline & Milestones</h4>
+  <ul>
+    <li><strong>Week 1:</strong> Core voice loop + capture + TTS proof-of-concept</li>
+    <li><strong>Week 2:</strong> OCR integration + basic commands</li>
+    <li><strong>Week 3:</strong> GPT intent parsing + voice polishing + user test</li>
+  </ul>
+
+  <h4>Key Learnings & Next Steps</h4>
+  <ul>
+    <li>Latency vs offline reliability trade-offs — build hybrid mode.</li>
+    <li>Add MEMS mic and custom PCB for form factor.</li>
+    <li>Conduct user interviews with visually impaired people for UX tuning.</li>
+  </ul>
+
+  <div style="margin-top:1.5rem;">
+    <a class="btn" href="https://github.com/jaydenteo/e-vision" target="_blank">See Code</a>
+    <a class="btn" href="mailto:tanjayden0819@example.com?subject=Demo%20Request">Request Demo</a>
+    <a class="btn" href="mailto:tanjayden0819@example.com?subject=Collaboration">Collaborate</a>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills & Tools</h2>
+  <div class="skills">
+    <div>
+      <h4>Embedded & Hardware</h4>
+      <div class="skill">Raspberry Pi Zero 2 W<div class="bar"><div style="width:90%"></div></div></div>
+      <div class="skill">Raspberry Pi Pico (RP2040)<div class="bar"><div style="width:90%"></div></div></div>
+      <div class="skill">Maker pHAT, UPS HAT<div class="bar"><div style="width:70%"></div></div></div>
+      <div class="skill">Camera Module 3 (CSI)<div class="bar"><div style="width:70%"></div></div></div>
+    </div>
+    <div>
+      <h4>Programming</h4>
+      <div class="skill">Python (CircuitPython, MicroPython)<div class="bar"><div style="width:95%"></div></div></div>
+      <div class="skill">Pybricks / EV3<div class="bar"><div style="width:90%"></div></div></div>
+      <div class="skill">C/C++ (Arduino)<div class="bar"><div style="width:65%"></div></div></div>
+      <div class="skill">Bash / Git<div class="bar"><div style="width:60%"></div></div></div>
+    </div>
+    <div>
+      <h4>AI & Vision</h4>
+      <div class="skill">pytesseract (OCR)<div class="bar"><div style="width:75%"></div></div></div>
+      <div class="skill">OpenAI APIs (chat, vision, whisper)<div class="bar"><div style="width:70%"></div></div></div>
+      <div class="skill">Basic CV (HSV detection)<div class="bar"><div style="width:65%"></div></div></div>
+    </div>
+    <div>
+      <h4>Tools / Other</h4>
+      <div class="skill">KiCad / PCB basics<div class="bar"><div style="width:50%"></div></div></div>
+      <div class="skill">Docker / CI tools<div class="bar"><div style="width:40%"></div></div></div>
+      <div class="skill">Video editing / OBS<div class="bar"><div style="width:40%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="media">
+  <h2>Media & Demos</h2>
+  <div class="grid">
+    <div>
+      <h4>E-Vision label reading</h4>
+      <video controls poster="assets/ev-poster.jpg">
+        <source src="assets/ev-label.mp4" type="video/mp4">
+      </video>
+      <p>E-Vision reading a medicine label in 6 seconds — capture → OCR → TTS.</p>
+    </div>
+    <div>
+      <h4>Color-sorting robot</h4>
+      <img src="assets/sort-gif.gif" alt="Robot sorting">
+      <p><a href="https://youtube.com/watch?v=xxxxxx" target="_blank">Full YouTube video →</a></p>
+    </div>
+    <div>
+      <h4>Pico Budget Tracker UI</h4>
+      <img src="assets/budget-gif.gif" alt="Budget UI">
+      <p><a href="https://github.com/jaydenteo/pico-budget" target="_blank">Code repo →</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Want to try E-Vision or collaborate on a robotics project? Drop a message below or e-mail <a href="mailto:tanjayden0819@example.com">tanjayden0819@example.com</a></p>
+  <form onsubmit="sendMail(event)">
+    <input name="name" placeholder="Name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <select name="type" required>
+      <option value="">Project type</option>
+      <option>Collaboration</option>
+      <option>Demo</option>
+      <option>Mentorship</option>
+      <option>Other</option>
+    </select>
+    <textarea name="msg" rows="5" placeholder="Message" required></textarea>
+    <button class="btn" type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>
+    <a href="https://github.com/jaydenteo" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com/in/jaydenteo" target="_blank">LinkedIn</a> |
+    <a href="assets/JaydenTan_CV.pdf" download>Download CV</a>
+  </p>
+  <p>© <span id="yr"></span> Jayden Tan – built with plain HTML/CSS/JS.</p>
+</footer>
+
+<script>
+  // tiny interactions
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  function sendMail(e){
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const subject = `Portfolio: ${fd.get('type')}`;
+    const body = `${fd.get('msg')}%0D%0A%0D%0AFrom ${fd.get('name')} (${fd.get('email')})`;
+    location.href = `mailto:tanjayden0819@example.com?subject=${subject}&body=${body}`;
+    e.target.reset();
+  }
+</script>
+</body>
+</html>
